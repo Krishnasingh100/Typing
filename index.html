@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="top-bar">
+            <h1>Typing Master</h1>
+
+            <div class="stats-inline">
+                <div class="stat">
+                    WPM: <span id="wpm">0</span>
+                </div>
+
+                <div class="stat">
+                    Accuracy: <span id="accuracy">100</span>%
+                </div>
+
+                <div class="stat">
+                    Errors: <span id="errors">0</span>
+                </div>
+
+                <div class="stat">
+                    Time: <span id="time">0</span>s
+                </div>
+            </div>
+        </div>
+        <div class="type-area">
+            <div class="text-display" id="textDisplay">
+            
+            </div>
+        </div>
+        <div class="actions">
+            <button id="resetBtn">Restart</button>
+        </div>
+        
+        <div class="hint">
+            Click on the text or start typing to begin the test.
+        </div>
+
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
