@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function pickText(){
 		const pool = Array.isArray(words) ? words : Object.values(words).flat();
 
-		// create a paragraph of ~50 words
+		// create a paragraph of 50 words
 		const out = [];
 		while(out.length < 50){
 			const next = pool[Math.floor(Math.random()*pool.length)];
@@ -96,7 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		accEl.textContent = accuracy;
 		errEl.textContent = errors;
 		if(final){
-			
+			// Show popup with stats
+			showResultsPopup({
+				time: timeElapsed,
+				errors: errors,
+				wpm: wpm,
+				accuracy: accuracy
+			});
 		}
 	}
 
@@ -113,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!started) {
 			startTimer();
 		}
-		//loda lahsun means ignore modifier keys for stats and position
+		//loda lahsun mean ignore modifier keys for stats and position
 		if(key === 'Shift' || key === 'Alt' || key === 'Control' || key === 'Meta') return;
 		const spans = textDisplay.querySelectorAll('.char');
 		if(key === 'Backspace'){
@@ -166,3 +172,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	// auto-start test setup on load (but don't start timer bsdk)
 	startTest();
 });
+
+function showResultsPopup({time, errors, wpm, accuracy}) {
+	// Use HTML popup container
+	const popup = document.getElementById('resultsPopup');
+	document.getElementById('popupTime').textContent = time;
+	document.getElementById('popupErrors').textContent = errors;
+	document.getElementById('popupWpm').textContent = wpm;
+	document.getElementById('popupAccuracy').textContent = accuracy;
+	popup.style.display = 'flex';
+	document.getElementById('closePopupBtn').onclick = function() {
+		popup.style.display = 'none';
+	};
+}
