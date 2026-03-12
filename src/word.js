@@ -52,27 +52,6 @@ const words = [
     "deprecation", "distributed", "enumeration", "inheritance",
     "integration", "propagation", "recursion", "regression",
     "replication", "simulation", "validation", "abstraction",
-
-    "acknowledgement", "classifications", "compartmentalize", "congratulations",
-    "counterproductive", "decentralization", "electromagnetic", "enlightenment",
-    "entrepreneurship", "environmentalism", "experimentation", "extraterrestrial",
-    "fundamental", "internationally", "investigations", "liberalization",
-    "misunderstanding", "multidimensional", "nondeterministic", "overcomplication",
-    "personalization", "photosynthesis", "postmodernism", "probabilistic",
-    "procrastination", "professionalism", "proportionality", "psychologically",
-    "recommendation", "representatives", "responsibilities", "revolutionary",
-    "simultaneously", "specifications", "standardization", "straightforward",
-    "subconsciously", "sustainability", "systematically", "telecommunication",
-    "thermodynamics", "underestimating", "unintelligible", "unsubstantiated",
-    "weatherproofing", "worcestershire", "xenotransplant", "zealousness",
-    "bioinformatics", "circumnavigation", "conscientiousness", "counterintuitive",
-    "crystallization", "deoxyribonucleic", "disproportionate", "dysfunctionality",
-    "electrochemical", "excommunication", "experimentation", "extrapolation",
-    "geopolitical", "heterogeneous", "interconnected", "interdisciplinary",
-    "malfunctioning", "metamorphosis", "miscommunication", "multifaceted",
-    "nanotechnology", "neuroplasticity", "noncompliance", "overengineering",
-    "paleontological", "parliamentarian", "photojournalism", "poststructuralism",
-    "predetermination", "presuppositions", "problematically", "programmatically",
 ];
 
 export default words;

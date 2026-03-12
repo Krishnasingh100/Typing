@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const wpmEl = document.getElementById('wpm');
 	const accEl = document.getElementById('accuracy');
 	const errEl = document.getElementById('errors');
+	const hiddenInput = document.getElementById('hiddenInput');
 
 	let timer = null;
 	let timeElapsed = 0; 
@@ -39,11 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			if(i===0) span.classList.add('current');
 			textDisplay.appendChild(span);
 		}
-		
-	// Start the timer when clicking on text	
+		// Focus hidden input on click/tap
 		textDisplay.addEventListener('click', () => {
+			hiddenInput.focus();
 			if (!started) {
 				startTimer(); 
+			}
+		});
+		// For mobile: focus input on touch
+		textDisplay.addEventListener('touchstart', () => {
+			hiddenInput.focus();
+			if (!started) {
+				startTimer();
 			}
 		});
 	}
@@ -167,6 +175,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		// prevent default only for printable keys/backspace to avoid page scroll
 		if(e.key.length === 1 || e.key === 'Backspace') e.preventDefault();
 		processKey(e.key);
+	});
+
+	// Listen to input from hidden input for mobile
+	hiddenInput.addEventListener('input', (e) => {
+		const value = e.target.value;
+		if (!value) return;
+		// Only process last character
+		const lastChar = value[value.length - 1];
+		processKey(lastChar);
+		// Clear input after processing
+		e.target.value = '';
 	});
 
 	// auto-start test setup on load (but don't start timer bsdk)
