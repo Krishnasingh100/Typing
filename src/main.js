@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// create a paragraph of 50 words
 		const out = [];
-		while(out.length < 50){
+		while(out.length < 20){
 			const next = pool[Math.floor(Math.random()*pool.length)];
 			out.push(next);
 		}
